@@ -1,4 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { Recipe } from "../shared/recipe.model";
 import { RecipeService } from '../shared/recipe.service';
 
@@ -8,17 +10,9 @@ import { RecipeService } from '../shared/recipe.service';
   styleUrls: ['./recipes.component.css'],
   providers: [RecipeService]
 })
-export class RecipesComponent implements OnInit {
-  selectedRecipe: Recipe;
+export class RecipesComponent {
+  //selectedRecipe: Recipe;
+  //recipeIndex: number = 0;
 
-  constructor(private recipeService: RecipeService) { }
-
-  ngOnInit() {
-    this.recipeService.recipeSelected.subscribe(
-      (recipe: Recipe) => {
-        this.selectedRecipe = recipe;
-        console.log('Incoming recipe: ' + this.selectedRecipe.name);
-      }
-    );
-  }
+  //constructor(private recipeService: RecipeService, private router: Router, private route: ActivatedRoute) { }
 }

@@ -1,4 +1,4 @@
-﻿import { Component, Output, EventEmitter } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +6,5 @@
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  @Output() navigationSelected = new EventEmitter<string>();
 
-  onNavigate(target: string) {
-    this.navigationSelected.emit(target);
-  }
 }
