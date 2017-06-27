@@ -4,7 +4,6 @@ import { Recipe } from "./recipe.model";
 import { Ingredient } from './ingredient.model';
 
 export class RecipeService {
-
   recipesChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
@@ -25,6 +24,11 @@ export class RecipeService {
       ]
     )
   ];
+
+  loadRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();

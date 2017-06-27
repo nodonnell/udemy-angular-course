@@ -17,6 +17,7 @@ import { ShoppingListService } from './shared/shopping-list.service';
 import { RecipeService } from './shared/recipe.service';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeDefaultComponent } from './recipes/recipe-default/recipe-default.component';
+import { HttpService } from './shared/http.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { RecipeDefaultComponent } from './recipes/recipe-default/recipe-default.
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService, RecipeService],
+  providers: [ShoppingListService, RecipeService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
